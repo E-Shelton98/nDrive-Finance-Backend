@@ -44,12 +44,12 @@ module Api
       private
       # Use callbacks to share common setup or constraints between actions.
       def set_loan
-      @loan = current_user.records.find(params[:id])
+      @loan = current_user.loans.find(params[:id])
       end
 
       # Only allow a trusted parameter "white list" through.
       def loan_params
-        params.require(:loan).permit(:borrower, :borrower-id, :borrower-address, :coborrower, :coborrower-id, :coborrower-address, :principal, :apr, :loan-term, :loan-amount, :vehicle-make, :vehicle-model, :vehicle-year, :vehicle-mileage, :vehicle-vin, :user_id)
+        params.require(:loan).permit(:borrower, :borrowerId, :borrowerEmail, :borrowerAddress, :coborrower, :coborrowerId, :coborrowerAddress, :principal, :apr, :loanTerm, :loanAmount, :vehicleMake, :vehicleModel, :vehicleYear, :vehicleMileage, :vehicleVin, :user_id)
       end
     end
   end

@@ -30,3 +30,5 @@ app.use(
   })
 )
 app.use(cookieParser())
+
+app.use('/auth', require('./routers/userRouter'))
